@@ -15,6 +15,3 @@ def get_response(text):
     # 5. Rate response relevance
 
     return "response", 1.0
-
-
-get_response("tere, mis on selle: asja vastus?")
