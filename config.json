@@ -1,0 +1,9 @@
+{
+  "normalize": false,
+  "languages": {
+    "from": "ee",
+    "to": "en"
+  },
+  "normalization_url": "http://prog.keeleressursid.ee/ws_etmrf/lemma.php?s={0}",
+  "replacements": ";.,?!"
+}
