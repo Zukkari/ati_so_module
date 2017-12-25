@@ -32,3 +32,5 @@ Currently those options can be configured:
   * 'to' language can be configured with ```"languages": { "to" : "your_lang_here" }```
   * 'from' language can be configured with ```"languages": { "from": "your_lang_here"}```
 * Punctuation signs that will be stripped from the input text can be configured with ```"replacements": ";.,?!"```
+
+Module also expects to find ```keychain.json``` file in the root directory which will be used for [StackExchange API](https://api.stackexchange.com/) authentication. 
