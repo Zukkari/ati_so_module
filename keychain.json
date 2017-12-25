@@ -1,8 +1,8 @@
 {
-  "client_id" : 11506,
-  "client_secret" : "vO642PlAu*HHlrk9y3Fqww((",
-  "key" : "LC61dcz89mvUXdxZo*c8GA((",
-  "description" : "ATI SO chatbot module",
-  "oauth_domain" : "stackexchange.com/oauth",
+  "client_id" : your_client_id,
+  "client_secret" : "your_client_secret",
+  "key" : "your_key",
+  "description" : "your_description",
+  "oauth_domain" : "your_oauthdomain",
   "app_website" : "https://github.com/Zukkari/ati_so_module"
 }
