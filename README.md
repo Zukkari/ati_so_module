@@ -21,3 +21,14 @@ For translations we use module found [here](http://py-googletrans.readthedocs.io
 ```pip install googletrans```
 
 Also we use the [following](http://prog.keeleressursid.ee/ws_etmrf/lemma.php) service for message normalization.
+
+## Configuration:
+Module can be configured using the ```config.json``` file in the root directory.
+
+Currently those options can be configured:
+
+* Text normalization can be enabled/disabled: ```"normalize": true/dalse```
+* Languages which will be used for translation:
+  * 'to' language can be configured with ```"languages": { "to" : "your_lang_here" }```
+  * 'from' language can be configured with ```"languages": { "from": "your_lang_here"}```
+* Punctuation signs that will be stripped from the input text can be configured with ```"replacements": ";.,?!"```
