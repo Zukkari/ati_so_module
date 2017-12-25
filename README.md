@@ -27,10 +27,12 @@ Module can be configured using the ```config.json``` file in the root directory.
 
 Currently those options can be configured:
 
-* Text normalization can be enabled/disabled: ```"normalize": true/dalse```
+* Text normalization:
+  * can be enabled/disabled: ```"normalize": { "enabled": true/dalse }```
+  * punctuation signs that will be stripped from the input text can be configured with ``` "normalize" : { "replacements": ";.,?!" }```
 * Languages which will be used for translation:
-  * 'to' language can be configured with ```"languages": { "to" : "your_lang_here" }```
-  * 'from' language can be configured with ```"languages": { "from": "your_lang_here"}```
-* Punctuation signs that will be stripped from the input text can be configured with ```"replacements": ";.,?!"```
+  * translation can be enabled/disabled: ``` "translation" : { "enabled" : true/false }```
+  * 'to' language can be configured with ``` "translation": { "languages": { "to" : "your_lang_here" }}```
+  * 'from' language can be configured with ``` "translation" : { "languages": { "from": "your_lang_here"}}```
 
 Module also expects to find ```keychain.json``` file in the root directory which will be used for [StackExchange API](https://api.stackexchange.com/) authentication. 
