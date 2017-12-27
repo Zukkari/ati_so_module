@@ -13,8 +13,19 @@
   },
   "stack_app": {
     "url": "https://api.stackexchange.com/{0}/{1}?order=desc&sort=relevance&site={2}&title={3}&tagged={4}",
-    "method" : "similar",
+    "method": "similar",
     "site": "stackoverflow",
     "version": 2.2
+  },
+  "stack_app_answer": {
+    "url": "https://api.stackexchange.com/{0}/{1}/{2}?site={3}&filter=withbody",
+    "method": "answers",
+    "version": 2.2,
+    "site": "stackoverflow"
+  },
+
+  "answer": {
+    "template": "Leidsime vastust antud küsimusele: {0}\n Vastuseks leidsime sellist küsimust: {1}\nLink küsimusele: {2}. \n Vastusega antud küsimusele saab tutvuda siin: {3}",
+    "not_found" : "Ei leidnud vastust antud küsimusele"
   }
 }
