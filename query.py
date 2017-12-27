@@ -9,3 +9,6 @@ def form_api_url(query):
         get_node_value("stack_app:site"),
         urllib.parse.quote(query)
     )
+
+def get_answer_from_api(question, tag):
+    pass
