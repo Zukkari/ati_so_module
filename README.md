@@ -20,6 +20,10 @@ For translations we use module found [here](http://py-googletrans.readthedocs.io
 
 ```pip install googletrans```
 
+We also use the wikipedia module found [here](https://pypi.python.org/pypi/wikipedia/):
+
+```pip install wikipedia```
+
 Also we use the [following](http://prog.keeleressursid.ee/ws_etmrf/lemma.php) service for message normalization.
 
 ## Configuration:
