@@ -2,6 +2,7 @@ import gzip
 import json
 import urllib.request
 from html.parser import HTMLParser
+from language import tag_finder
 
 from configuration import get_node_value
 
@@ -114,4 +115,17 @@ def load_response(question, tag):
     return data
 
 
-print(get_answer_from_api("add element to array", "python"))
+def preparing_question(question):
+    tag = tag_finder(question).lower()
+
+    print("Tag mida kasutame : " +str(tag))
+    print("Küsimus : " +str(question))
+
+
+    return get_answer_from_api(question, tag)
+
+
+
+print(preparing_question("Java add element to array"))
+
+
