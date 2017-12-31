@@ -39,5 +39,15 @@ Currently those options can be configured:
   * 'to' language can be configured with ``` "translation": { "languages": { "to" : "your_lang_here" }}```
   * 'from' language can be configured with ``` "translation" : { "languages": { "from": "your_lang_here"}}```
 
-
-Module also expects to find ```keychain.json``` file in the root directory which will be used for [StackExchange API](https://api.stackexchange.com/) authentication. 
+* Stack apps querying:
+  * url which will be queried is in the node: ```url```
+  * querying method can be found in the node (we found that similar produces best results in our case): ```method```
+  * api version is found in the node ```version```
+  * site which will be queried is in the node (we use stackoverflow site, but other sites like math exchange can be used too) ```site```
+ 
+ * Stacks apps answer:
+   * same rules as for querying
+  
+* Answer:
+  * successful answer template is defined in node ```template```
+  * answer if no response is found is defined in ```not_found``` node
