@@ -25,7 +25,7 @@
   },
 
   "answer": {
-    "template": "Leidsime vastust antud küsimusele: {0}\n Vastuseks leidsime sellist küsimust: {1}\nLink küsimusele: {2}. \n Vastusega antud küsimusele saab tutvuda siin: {3}",
+    "template": "Leidsime vastust antud küsimusele: {0}\n Vastuseks leidsime sellist küsimust: {1}\nLink küsimusele: {2}. \n Parim vastus antud küsimusele: {3}",
     "not_found" : "Ei leidnud vastust antud küsimusele"
   }
 }

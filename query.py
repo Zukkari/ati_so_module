@@ -76,16 +76,16 @@ def parse_response(param):
     return strip_tags(param)
 
 
-def form_nice_answer(best_option, answer, question):
+def form_nice_answer(best_option, answer, original):
     return get_node_value("answer:template").format(
-        question,
+        original,
         best_option['title'],
         best_option['link'],
         parse_response(answer['body'])
     )
 
 
-def get_answer_from_api(question, tag):
+def get_answer_from_api(question, tag, original):
     data = load_response(question, tag)
 
     keywords = question.split()
@@ -93,8 +93,11 @@ def get_answer_from_api(question, tag):
     # Take questions that have been answered and that are relevant to the language we are looking for
     filtered = list(filter(lambda data: data["is_answered"] and tag in data["tags"], data))
 
-    if len(filtered) == 0:
+    if (len(data) == 0):
         return get_node_value("answer:not_found"), 0.0
+
+    if len(filtered) == 0:
+        filtered = data
 
     contains_keywords = group_by_keywords(keywords, filtered)
 
@@ -104,7 +107,7 @@ def get_answer_from_api(question, tag):
     accepted_answer = best_option['accepted_answer_id']
     answer = load_answer(accepted_answer)
 
-    return form_nice_answer(best_option, answer, question), relevance
+    return form_nice_answer(best_option, answer, original), relevance
 
 
 def load_response(question, tag):
@@ -113,19 +116,3 @@ def load_response(question, tag):
     with gzip.open(file, "rb") as f:
         data = json.loads(f.read().decode())['items']
     return data
-
-
-def preparing_question(question):
-    tag = tag_finder(question).lower()
-
-    print("Tag mida kasutame : " +str(tag))
-    print("Küsimus : " +str(question))
-
-
-    return get_answer_from_api(question, tag)
-
-
-
-print(preparing_question("Java add element to array"))
-
-
