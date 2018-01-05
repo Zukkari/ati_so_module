@@ -107,7 +107,7 @@ def get_answer_from_api(question, tag, original):
     accepted_answer = best_option['accepted_answer_id']
     answer = load_answer(accepted_answer)
 
-    return form_nice_answer(best_option, answer, original), relevance
+    return relevance, form_nice_answer(best_option, answer, original), False
 
 
 def load_response(question, tag):

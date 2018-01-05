@@ -23,17 +23,17 @@ def read_and_clean_data():
 
 def tag_finder(lause):
     best_match = ""
-    best_procentage = 0
+    best_percentage = 0
     list_of_languages = read_and_clean_data()
 
     for language in list_of_languages:
         for word in lause.split(" "):
-            procentage = round(similar(language.lower(), word.lower()) * 100, 2)
-            if procentage == 100.00:
+            percentage = round(similar(language.lower(), word.lower()) * 100, 2)
+            if percentage == 100.00:
                 return language
 
-            if procentage > best_procentage:
-                best_procentage = procentage
+            if percentage > best_percentage:
+                best_percentage = percentage
                 best_match = language
 
     return best_match
