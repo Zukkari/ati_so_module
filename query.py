@@ -77,6 +77,10 @@ def parse_response(param):
 
 
 def form_nice_answer(best_option, answer, original):
+
+    if answer == "Puudub":
+        return "Kahjuks ei leidnud aktsepteeritud vastust StackOver Flowst"
+
     return get_node_value("answer:template").format(
         original,
         best_option['title'],
@@ -104,10 +108,15 @@ def get_answer_from_api(question, tag, original):
     relevance = sorted(contains_keywords.keys(), reverse=True)[0]
     best_option = contains_keywords[relevance]
 
-    accepted_answer = best_option['accepted_answer_id']
-    answer = load_answer(accepted_answer)
+    if('accepted_answer_id' not in best_option):
 
-    return relevance, form_nice_answer(best_option, answer, original), False
+        return 0.0, form_nice_answer(best_option, "Puudub", original), False
+
+    else :
+        accepted_answer = best_option['accepted_answer_id']
+        answer = load_answer(accepted_answer)
+
+        return relevance, form_nice_answer(best_option, answer, original), False
 
 
 def load_response(question, tag):
